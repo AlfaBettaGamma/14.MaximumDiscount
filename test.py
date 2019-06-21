@@ -27,7 +27,7 @@ def MaximumDiscount(N, price):
   if len(price) != N:
     return 'Неверно введенные данные!'
   if len(price) < 3:
-    return 'Скидки не будет!'
+    return 0
   elif N >= 3 and N < 6 :
     discount = ThreeItem(price)
     return discount

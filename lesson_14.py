@@ -23,9 +23,10 @@ def MaximumDiscount(N, price):
   tst = []
   discount = 0
   disc3 = 0
+  n = 1
   if len(price) != N:
     return 'Неверно введенные данные!'
-  if len(price) < 3 and N < 3:
+  if len(price) < 3:
     return 'Скидки не будет!'
   elif N >= 3 and N < 6 :
     discount = ThreeItem(price)
@@ -33,8 +34,9 @@ def MaximumDiscount(N, price):
   else:
     discount = MoreThreeItems(price)
     for i in range(N):
-      if i % 3 == 0 and i != 0:
-        disc3 = disc3 + SortItem(price)[i-1]
+      if n % 3 == 0 and i != 0:
+        disc3 = disc3 + SortItem(price)[n-1]
+      n += 1
     if disc3 > discount:
       return disc3
     else:
